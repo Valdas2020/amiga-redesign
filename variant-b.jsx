@@ -1,5 +1,42 @@
 // Variant B — Together: photo-first, warm, conversational
 
+// YouTube card with click-to-embed
+// NOTE: Replace the list param with your actual YouTube channel ID (UC…)
+//       if the username embed doesn't resolve. Get it from your channel URL.
+const YTCard = ({ p }) => {
+  const [playing, setPlaying] = React.useState(false);
+  return (
+    <div className={"program-card program-yt" + (playing ? " yt-playing" : "")}>
+      {playing ? (
+        <div className="yt-embed-wrap">
+          <iframe
+            src="https://www.youtube.com/embed?listType=user_uploads&list=amiga.migrant&autoplay=1"
+            width="100%" height="220"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            style={{ display: "block", border: 0 }}
+          />
+        </div>
+      ) : (
+        <button className="yt-preview" onClick={() => setPlaying(true)} aria-label="Přehrát video">
+          <div className="yt-bg">
+            <svg className="yt-play" viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7A8.5 8.5 0 0 0 60.6 1.8C55.3 0 34 0 34 0S12.7 0 7.4 1.8A8.5 8.5 0 0 0 1.5 7.7C0 13.1 0 24 0 24s0 10.9 1.5 16.3a8.5 8.5 0 0 0 5.9 5.9C12.7 48 34 48 34 48s21.3 0 26.6-1.8a8.5 8.5 0 0 0 5.9-5.9C68 34.9 68 24 68 24s0-10.9-1.5-16.3z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
+            <div className="yt-channel">@amiga.migrant</div>
+          </div>
+        </button>
+      )}
+      <div className="body">
+        <div className="tag">{p.tag}</div>
+        <h3>{p.title}</h3>
+        <p style={{ whiteSpace: "pre-line" }}>{p.desc}</p>
+        <a href={p.youtube} target="_blank" rel="noopener" className="yt-cta">
+          Sledovat na YouTube <Icon name="arrow" size={13} />
+        </a>
+      </div>
+    </div>
+  );
+};
+
 const VariantB = ({ t, openHelp }) => {
   const icons = ["shield", "heart", "waves", "compass"];
   return (
@@ -74,24 +111,7 @@ const VariantB = ({ t, openHelp }) => {
                 "mp49o3b2-belgicka.avif",
               ];
               if (p.youtube) {
-                return (
-                  <div key={i} className="program-card program-yt">
-                    <a href={p.youtube} target="_blank" rel="noopener" className="yt-preview" aria-label="YouTube channel">
-                      <div className="yt-bg">
-                        <svg className="yt-play" viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7A8.5 8.5 0 0 0 60.6 1.8C55.3 0 34 0 34 0S12.7 0 7.4 1.8A8.5 8.5 0 0 0 1.5 7.7C0 13.1 0 24 0 24s0 10.9 1.5 16.3a8.5 8.5 0 0 0 5.9 5.9C12.7 48 34 48 34 48s21.3 0 26.6-1.8a8.5 8.5 0 0 0 5.9-5.9C68 34.9 68 24 68 24s0-10.9-1.5-16.3z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
-                        <div className="yt-channel">@amiga.migrant</div>
-                      </div>
-                    </a>
-                    <div className="body">
-                      <div className="tag">{p.tag}</div>
-                      <h3>{p.title}</h3>
-                      <p style={{ whiteSpace: "pre-line" }}>{p.desc}</p>
-                      <a href={p.youtube} target="_blank" rel="noopener" className="yt-cta">
-                        Sledovat na YouTube <Icon name="arrow" size={13} />
-                      </a>
-                    </div>
-                  </div>
-                );
+                return <YTCard key={i} p={p} />;
               }
               return (
                 <div key={i} className="program-card">

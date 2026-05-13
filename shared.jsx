@@ -87,29 +87,62 @@ const Splash = ({ onPick }) => {
 // ——————————————————————————————————————————————————————
 // Topbar (shared, themed via body[data-variant])
 // ——————————————————————————————————————————————————————
-const Topbar = ({ t, lang, onLangClick, onHelp }) => (
-  <div className="topbar">
-    <div className="wrap topbar-inner">
-      <a href="#" className="brand">
-        <BrandLogo height={42} />
-      </a>
-      <nav>
-        <a href="#programs">{t.nav.programs}</a>
-        <a href="#about">{t.nav.about}</a>
-        <a href="#support">{t.nav.support}</a>
-        <a href="#news">{t.nav.news}</a>
-      </nav>
-      <div className="topbar-right">
-        <button className="lang-pill" onClick={onLangClick}>
-          <Icon name="globe" size={14} /> {lang.toUpperCase()}
-        </button>
-        <button className="btn btn-primary" onClick={onHelp}>
-          <Icon name="heart" size={16} /> {t.nav.help}
-        </button>
+const Topbar = ({ t, lang, setLang, onHelp }) => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
+  const current = LANGS.find(l => l.code === lang) || LANGS[0];
+
+  return (
+    <div className="topbar">
+      <div className="wrap topbar-inner">
+        <a href="#" className="brand">
+          <BrandLogo height={42} />
+        </a>
+        <nav>
+          <a href="#programs">{t.nav.programs}</a>
+          <a href="#about">{t.nav.about}</a>
+          <a href="#support">{t.nav.support}</a>
+          <a href="#news">{t.nav.news}</a>
+        </nav>
+        <div className="topbar-right">
+          <div className="lang-dropdown" ref={ref}>
+            <button className="lang-pill" onClick={() => setOpen(o => !o)}>
+              <Icon name="globe" size={14} /> {current.code.toUpperCase()} <span className="lang-caret">▾</span>
+            </button>
+            {open && (
+              <div className="lang-menu">
+                {LANGS.map(l => (
+                  <button
+                    key={l.code}
+                    className={"lang-option" + (l.code === lang ? " active" : "")}
+                    onClick={() => { setLang(l.code); setOpen(false); }}
+                  >
+                    <span className="lang-flag">{l.flag}</span>
+                    <span className="lang-name">{l.name}</span>
+                    {l.code === lang && <span className="lang-check">✓</span>}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+          <button className="btn btn-primary" onClick={onHelp}>
+            <Icon name="heart" size={16} /> {t.nav.help}
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 // ——————————————————————————————————————————————————————
 // Tweaks panel

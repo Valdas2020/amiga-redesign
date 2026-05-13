@@ -88,15 +88,11 @@ const App = () => {
 
   const t = window.AMIGA_CONTENT[lang];
   const openHelp = (e) => { if (e) e.preventDefault(); setHelpOpen(true); };
-  const cycleLang = () => {
-    const codes = LANGS.map(l => l.code);
-    setLang(codes[(codes.indexOf(lang) + 1) % codes.length]);
-  };
 
   return (
     <>
       {!splashDone && <Splash onPick={handleSplashPick} />}
-      <Topbar t={t} lang={lang} onLangClick={cycleLang} onHelp={openHelp} />
+      <Topbar t={t} lang={lang} setLang={setLang} onHelp={openHelp} />
       <VariantB t={t} openHelp={openHelp} />
       <Tweaks open={tweaksOpen} onClose={() => setTweaksOpen(false)} variant={variant} setVariant={setVariant} lang={lang} setLang={setLang} fs={fs} setFs={setFs} />
       <HelpModal open={helpOpen} onClose={() => setHelpOpen(false)} t={t} />

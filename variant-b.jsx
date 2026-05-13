@@ -10,7 +10,7 @@ const YTCard = ({ p }) => {
       {playing ? (
         <div className="yt-embed-wrap">
           <iframe
-            src="https://www.youtube.com/embed?listType=user_uploads&list=amiga.migrant&autoplay=1"
+            src="https://www.youtube.com/embed/v4K9EirwcW4?list=UUDfqtuukHs-LmPz_BDGAVQQ&autoplay=1"
             width="100%" height="220"
             allow="autoplay; encrypted-media; picture-in-picture"
             allowFullScreen

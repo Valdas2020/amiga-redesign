@@ -6,30 +6,32 @@ const VariantB = ({ t, openHelp }) => {
     <div className="vB">
       {/* Hero */}
       <section className="hero">
-        <div className="wrap hero-stack">
-          <div className="hero-left">
-            <div>
-              <div className="hero-eyebrow">{t.hero.eyebrow}</div>
-              <h1 dangerouslySetInnerHTML={{ __html: t.hero.title.replace(/([^.]+)\.(.*)$/, '$1. <em>$2</em>') }} />
-              <p className="lead">{t.hero.subtitle}</p>
-              <div className="hero-cta">
-                <button className="btn btn-primary" onClick={openHelp}>
-                  <Icon name="heart" size={18} /> {t.hero.primary}
-                </button>
-                <a href="#programs" className="btn btn-ghost">{t.hero.secondary}</a>
+        <div className="wrap">
+          <div className="hero-grid">
+            <div className="hero-left">
+              <div>
+                <div className="hero-eyebrow">{t.hero.eyebrow}</div>
+                <h1 dangerouslySetInnerHTML={{ __html: t.hero.title.replace(/([^.]+)\.(.*)$/, '$1. <em>$2</em>') }} />
+                <p className="lead">{t.hero.subtitle}</p>
+                <div className="hero-cta">
+                  <button className="btn btn-primary" onClick={openHelp}>
+                    <Icon name="heart" size={18} /> {t.hero.primary}
+                  </button>
+                  <a href="#programs" className="btn btn-ghost">{t.hero.secondary}</a>
+                </div>
+              </div>
+              <div className="quick-stats">
+                {t.stats.slice(0, 3).map((s, i) => (
+                  <div key={i} className="qs-item">
+                    <strong>{s.n}</strong>
+                    <span>{s.l}</span>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="quick-stats">
-              {t.stats.slice(0, 3).map((s, i) => (
-                <div key={i} className="qs-item">
-                  <strong>{s.n}</strong>
-                  <span>{s.l}</span>
-                </div>
-              ))}
+            <div className="hero-photo-panel">
+              <img src="mp4ahv98-podpora.avif" alt="Podpora" className="hero-photo-img" />
             </div>
-          </div>
-          <div className="hero-right">
-            <div className="photo photo-b" />
           </div>
         </div>
       </section>
@@ -65,16 +67,34 @@ const VariantB = ({ t, openHelp }) => {
             </div>
           </div>
           <div className="programs-grid">
-            {t.programs.items.slice(0, 5).map((p, i) => {
+            {t.programs.items.map((p, i) => {
               const photos = [
-                "assets/photo-group-talk.avif",
-                "assets/photo-circle.avif",
-                "assets/photo-art-therapy.avif",
-                "assets/photo-kids-art.avif",
-                "assets/photo-kids-craft.avif",
+                "mp49lowj-psycholog.avif",
+                "mp492nuq-Skupinova-podpora.avif",
+                "mp49o3b2-belgicka.avif",
               ];
+              if (p.youtube) {
+                return (
+                  <div key={i} className="program-card program-yt">
+                    <a href={p.youtube} target="_blank" rel="noopener" className="yt-preview" aria-label="YouTube channel">
+                      <div className="yt-bg">
+                        <svg className="yt-play" viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7A8.5 8.5 0 0 0 60.6 1.8C55.3 0 34 0 34 0S12.7 0 7.4 1.8A8.5 8.5 0 0 0 1.5 7.7C0 13.1 0 24 0 24s0 10.9 1.5 16.3a8.5 8.5 0 0 0 5.9 5.9C12.7 48 34 48 34 48s21.3 0 26.6-1.8a8.5 8.5 0 0 0 5.9-5.9C68 34.9 68 24 68 24s0-10.9-1.5-16.3z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
+                        <div className="yt-channel">@amiga.migrant</div>
+                      </div>
+                    </a>
+                    <div className="body">
+                      <div className="tag">{p.tag}</div>
+                      <h3>{p.title}</h3>
+                      <p style={{ whiteSpace: "pre-line" }}>{p.desc}</p>
+                      <a href={p.youtube} target="_blank" rel="noopener" className="yt-cta">
+                        Sledovat na YouTube <Icon name="arrow" size={13} />
+                      </a>
+                    </div>
+                  </div>
+                );
+              }
               return (
-                <div key={i} className={"program-card" + (i === 0 ? " big" : "")}>
+                <div key={i} className="program-card">
                   <div className="photo" style={{ backgroundImage: `url(${photos[i]})`, backgroundSize: "cover", backgroundPosition: "center" }} />
                   <div className="body">
                     <div className="tag">{p.tag}</div>

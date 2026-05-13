@@ -33,13 +33,12 @@ window.AMIGA_CONTENT = {
     },
     programs: {
       eyebrow: "Naše programy",
-      title: "Pět cest k podpoře",
+      title: "Čtyři cesty k podpoře",
       items: [
         { tag: "Individuálně", title: "Psychologická konzultace", desc: "60 minut s certifikovaným psychologem. Online nebo v centru na Vinohradech.", meta: "Zdarma · Rezervace přes Telegram" },
         { tag: "Skupinově", title: "Terapeutické skupiny", desc: "Sdílejte zkušenosti s lidmi, kteří prošli podobnou cestou. Každý týden.", meta: "Zdarma · 8–10 účastníků" },
-        { tag: "Krizová linka", title: "Dumka — okamžitá pomoc", desc: "Chat s psychologem do 15 minut. Anonymně, bezpečně.", meta: "Každý den · 9:00–21:00" },
         { tag: "Komunita", title: "Centrum na Belgické 11", desc: "Workshopy, setkání, tělesná terapie, kreativní dílny.", meta: "Praha 2 · Vinohrady" },
-        { tag: "Dlouhodobě", title: "Mentoring program", desc: "Kariérní podpora a integrace do české společnosti s osobním mentorem.", meta: "6 měsíců · 1:1" }
+        { tag: "Informace", title: "Informační podpora", desc: "Propojujeme migranty a uprchlíky se sociálními, psychologickými a zdravotními službami v ČR. Spolupracujeme s neziskovými a pacientskými organizacemi, svépomocnými skupinami, spolky a integračními centry, aby lidé snadno našli potřebné informace a podporu.\n\nNajdete u nás také videa představující tyto organizace a služby. Sledujte náš YouTube kanál pro rychlý přehled a orientaci.", meta: "YouTube · @amiga.migrant", youtube: "https://www.youtube.com/@amiga.migrant" }
       ]
     },
     story: {
@@ -95,13 +94,12 @@ window.AMIGA_CONTENT = {
     },
     programs: {
       eyebrow: "Наші програми",
-      title: "П'ять шляхів підтримки",
+      title: "Чотири шляхи підтримки",
       items: [
         { tag: "Індивідуально", title: "Психологічна консультація", desc: "60 хвилин із сертифікованим психологом. Онлайн або в центрі на Виноградах.", meta: "Безкоштовно · Запис через Telegram" },
         { tag: "У групі", title: "Терапевтичні групи", desc: "Діліться досвідом з людьми, які пройшли схожий шлях. Щотижня.", meta: "Безкоштовно · 8–10 учасників" },
-        { tag: "Кризова лінія", title: "Dumka — миттєва допомога", desc: "Чат із психологом за 15 хвилин. Анонімно, безпечно.", meta: "Щодня · 9:00–21:00" },
         { tag: "Спільнота", title: "Центр на Belgická 11", desc: "Воркшопи, зустрічі, тілесна терапія, творчі майстерні.", meta: "Прага 2 · Виногради" },
-        { tag: "Довгостроково", title: "Програма менторства", desc: "Кар'єрна підтримка й інтеграція у чеське суспільство з особистим ментором.", meta: "6 місяців · 1:1" }
+        { tag: "Інформація", title: "Інформаційна підтримка", desc: "Зв'язуємо мігрантів та біженців із соціальними, психологічними та медичними послугами в ЧР. Співпрацюємо з некомерційними організаціями, групами взаємодопомоги та інтеграційними центрами.\n\nТакож знайдете відео про ці організації та послуги. Підписуйтесь на наш YouTube-канал.", meta: "YouTube · @amiga.migrant", youtube: "https://www.youtube.com/@amiga.migrant" }
       ]
     },
     story: {
@@ -153,13 +151,12 @@ window.AMIGA_CONTENT = {
     },
     programs: {
       eyebrow: "Наши программы",
-      title: "Пять путей к поддержке",
+      title: "Четыре пути к поддержке",
       items: [
         { tag: "Индивидуально", title: "Психологическая консультация", desc: "60 минут с сертифицированным психологом. Онлайн или в центре на Виноградах.", meta: "Бесплатно · Запись через Telegram" },
         { tag: "В группе", title: "Терапевтические группы", desc: "Делитесь опытом с людьми, прошедшими похожий путь. Еженедельно.", meta: "Бесплатно · 8–10 участников" },
-        { tag: "Кризисная линия", title: "Dumka — срочная помощь", desc: "Чат с психологом в течение 15 минут. Анонимно, безопасно.", meta: "Каждый день · 9:00–21:00" },
         { tag: "Сообщество", title: "Центр на Belgická 11", desc: "Воркшопы, встречи, телесная терапия, творческие мастерские.", meta: "Прага 2 · Винограды" },
-        { tag: "Долгосрочно", title: "Программа менторства", desc: "Карьерная поддержка и интеграция в чешское общество с личным ментором.", meta: "6 месяцев · 1:1" }
+        { tag: "Информация", title: "Информационная поддержка", desc: "Связываем мигрантов и беженцев с социальными, психологическими и медицинскими службами в ЧР. Сотрудничаем с НКО, группами взаимопомощи и интеграционными центрами.\n\nТакже найдёте видео об этих организациях и услугах. Подписывайтесь на наш YouTube-канал.", meta: "YouTube · @amiga.migrant", youtube: "https://www.youtube.com/@amiga.migrant" }
       ]
     },
     story: {
@@ -211,13 +208,12 @@ window.AMIGA_CONTENT = {
     },
     programs: {
       eyebrow: "Our programs",
-      title: "Five paths to support",
+      title: "Four paths to support",
       items: [
         { tag: "1:1", title: "Psychological consultation", desc: "60 minutes with a certified psychologist. Online or at our center in Vinohrady.", meta: "Free · Book via Telegram" },
         { tag: "Group", title: "Therapy groups", desc: "Share with people who've walked a similar path. Weekly meetings.", meta: "Free · 8–10 participants" },
-        { tag: "Crisis line", title: "Dumka — immediate help", desc: "Chat with a psychologist within 15 minutes. Anonymous, safe.", meta: "Every day · 9 AM – 9 PM" },
         { tag: "Community", title: "Center at Belgická 11", desc: "Workshops, meetings, body-oriented therapy, creative sessions.", meta: "Prague 2 · Vinohrady" },
-        { tag: "Long-term", title: "Mentoring program", desc: "Career support and integration into Czech society with a personal mentor.", meta: "6 months · 1:1" }
+        { tag: "Info", title: "Information support", desc: "We connect migrants and refugees with social, psychological, and medical services in the Czech Republic. We partner with NGOs, self-help groups, and integration centres so people can easily find the information and support they need.\n\nYou'll also find videos introducing these organisations and services. Follow our YouTube channel for a quick overview.", meta: "YouTube · @amiga.migrant", youtube: "https://www.youtube.com/@amiga.migrant" }
       ]
     },
     story: {
